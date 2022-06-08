@@ -28,19 +28,19 @@
 \section{Hateville}
 
 Ad Hateville viene organizzata una sagra. Per la raccolta fondi la casa i donera' n soldi solo se non doneranno entrambi i suoi vicini i-1 e i+1. Scrivere un algoritmo che restituisca il numero maggiore di soldi.
-
+\begin{algorithmic}
 \begin{algorithm}
 \caption{Hateville(int[] DP, int n)}\label{alg:cap}
-\begin{algorithmic}
+
 \State int [] D = new int[0...n]
 \State DP[0] = 0;
 \State DP[1] = D[1];
 \For (i=2 to n)
 	\State DP[i] = max(DP[i-2] + D[i], DP[i-1])
 \EndFor
-\end{algorithmic}
-\end{algorithm}
 
+\end{algorithm}
+\end{algorithmic}
 Questo ritornera' una tabella DP dalla quale dovrebbe essere ricavabile la soluzione.
 
 \newpage
@@ -75,4 +75,57 @@ Dato un insieme di oggetti con peso e con un loro valore e data una capacita' C 
 
 This should return the correct matrix containing the solution in the bottom right corner.
 
+C'e' anche una versione ricorsiva dello zaino con la memoization. La memoization e' l'approccio top-down, in pratica si controlla prima se quel problema e' gia stato risolto. DP e' inizializzata nella funzione wrapper con tutti gli elementi posti a -1.
+
+\begin{algorithm}
+\caption{Knapsack(int[] w, int[] p, int C, int n)}\label{alg:cap}
+\begin{algorithmic}
+\If {c $<$ 0}
+	\State return -$\infty$ 
+\ElsIf{i == 0 or c == 0}
+	\State return 0
+\Else
+	\State \If{DP[i][c] $<$ 0 }
+			\State int notTaken = knapsackRec(w,p,i-1,c,DP);
+			\State int taken = knapsackRec(w,p, i-1,c-w[i],DP) + p[i];
+			\State return max(taken,notTaken);
+		\EndIf
+	\EndIf
+	\State return DP[i][c];
+
+\end{algorithmic}
+\end{algorithm}
+
+La versione dello zaino senza fondo presenta invece un array DP e non una matrice. Lo si puo' trovare nelle slide di Montresor.
+
+
+\section{Sottosequenza comune massimale}
+Per SCM (d'ora in avanti LCS per longest common subsequence) s'intende la sottosequenza piu' lunga che due parole hanno in comune. Per esempio\\
+AAAATTGA e AAATA, LCS coincide con AAATA, in quanto la sottosequenza non deve essere di fila.
+
+\begin{algorithm}
+\caption{int LCS(ITEM[] T, ITEM[] U, int n, int m)}\label{alg:cap}
+\begin{algorithmic}
+\State int[][] DP = new int[1...n][1...m];
+\For{i = 0 to n}
+	\State DP[i][0] = 0;
+\EndFor
+\For{j = 0 to m}
+	\State DP[0][m] = 0;
+\EndFor
+\For{i=1 to n}
+	\For{j=1 to m}
+		\If {T[i] == U[i]}
+			DP[i][j] = DP[i][j]+1;
+			\Else
+				\State DP[i][j] = max(DP[i-1][j],DP[i][j-1];
+		\EndIf
+	\EndFor
+\EndFor
+
+return DP[n][m];
+\end{algorithmic}
+\end{algorithm}
+
+In pratica quello che viene fatto e' calcolare la LCS e nel caso la lettera preas in considerazione non sia uguale si controlla togliendo una lettera dalla prima parola e poi dalla seconda. Da notare che questo non da la soluzione, in quanto da solo la lunghezza massima della LCS.
 \end{document}

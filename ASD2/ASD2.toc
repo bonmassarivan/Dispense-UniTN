@@ -2,3 +2,4 @@
 \contentsline {chapter}{\numberline {1}Programmazione dinamica}{2}%
 \contentsline {section}{\numberline {1.1}Hateville}{2}%
 \contentsline {section}{\numberline {1.2}Knapsack}{3}%
+\contentsline {section}{\numberline {1.3}Sottosequenza comune massimale}{4}%
