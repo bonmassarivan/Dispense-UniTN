@@ -128,4 +128,109 @@ return DP[n][m];
 \end{algorithm}
 
 In pratica quello che viene fatto e' calcolare la LCS e nel caso la lettera preas in considerazione non sia uguale si controlla togliendo una lettera dalla prima parola e poi dalla seconda. Da notare che questo non da la soluzione, in quanto da solo la lunghezza massima della LCS.
+
+\newpage
+
+\section{String matching approssimativo}
+Calcolare il minor numero k necessario per un pattern per essere trovato in una stringa. Le operazioni possibili sono, cancellazione, sostituzione e inserimento. Esempio:\\
+BAB e' in ABABAB con k=0 modifiche. \\
+unesempio e' contenuto in questoeunoscempio con k = 2 modifiche.
+
+\begin{algorithm}
+\caption{stringMatching()}\label{alg:cap}
+\begin{algorithmic}
+\State int [][] DP = new int [0...n][0...m] ;
+\For{j = 0 to n} DP[0][j] = 0;
+\EndFor
+
+\For {i = 0 to m} DP[i][0] = i;
+\EndFor
+
+\For{i = 0 to m}
+	\For {j = 0 to n}
+		\State DP[i][j] =min( \State DP[i-1][j-1] + iff(P[i] == T[i], 0,1),
+	\State        DP[i-1][j]+1,
+	\State        DP[i][j-1])
+	\EndFor
+
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+\newpage
+\section{Insieme di intervalli pesati}
+Questo problema puo' essere spiegato con una sala riunioni e un'organizzazione degli appuntamenti che massimizza i profitti.
+
+Per risolverlo, l'algoritmo fa uso di "predecessori" ovvero dell'intervallo di tempo appena prima quello selezionato.
+
+\begin{algorithm}
+\caption{Set maxSet(int[] a, int[] b, int[]w, int n)\label{alg:cap}}
+\begin{algorithmic}
+\State {ordina gli intervalli per estremi di fine crescenti}
+
+\State int[] pred = computePred(a,b,n);
+\State int[] DP = new int[0...n];
+\State DP[0] = 0;
+\For {i = 1 to n}
+	\item DP[i] = max(DP[i-1], w[i]+DP[pred[i]]);
+\EndFor
+
+\State i = n;
+\State Set s = Set();
+
+
+\While{i $>$ 0}
+	\If {DP[i-1] $>$ w[i]+DP[pred[i]]}
+		\State i = i-1
+	\Else
+		S.insert(i)
+		i = pred[i]
+	\EndIf
+\EndWhile
+
+\end{algorithmic}
+\end{algorithm}
+
+\chapter{Greedy}
+\section{Insieme di intervalli}
+Nella versione greedy del problema non sono piu' pesati. Per greedy si intende una "tattica" da utilizzare per scegliere la soluzione migliore senza dover calcolare le altre. In questo caso la scelta migliore e' quella di scegliere gli intervalli man mano con il minor tempo di fine. 
+
+
+\begin{algorithm}
+\caption{Set indipendentSet(int[] a, int[] b)\label{alg:cap}}
+\begin{algorithmic}
+\State {ordina a e b in modo che b[1] $<$ b[2]... }
+Set S = Set();
+S.insert(1)
+int last = 1
+\For {i = 2 to n}
+	\If
+		{a[i] $\geq $ b[last]}
+		\State S.insert(i)
+		\State last = i;
+	\EndIf
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+\newpage
+\section{Compressione di Huffman}
+La compressione di caratteri di Huffman si basa sull'idea di creare una codifica per ogni file. Questo per fare in modo che ogni file abbia una sua specifica e corretta frequenza dei caratteri. I caratteri con minor frequenza avranno prefissi piu' lunghi.
+
+\begin{algorithm}
+\caption{huffman(int[]c,int[]f, int n)\label{alg:cap}}
+\begin{algorithmic}
+\State PriorityQueue Q = minPriorityQueue();
+\For	{i = 1 to n}
+	\State Q.insert(f[i],c[i]);
+\EndFor
+\For{i=1 to n-1}
+	\State $z_1$ = Q.deleteMin();
+	\State $z_2$ = Q.deleteMin();
+	\State z = Tree($z_1$.f+$z_2$.f, nil);	
+	\State z.left = $z_1$;
+	\State z.right = $z_2$;
+	\State Q.insert(z.f,z);
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
 \end{document}
