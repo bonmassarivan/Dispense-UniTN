@@ -8,3 +8,4 @@
 \contentsline {chapter}{\numberline {2}Greedy}{7}%
 \contentsline {section}{\numberline {2.1}Insieme di intervalli}{7}%
 \contentsline {section}{\numberline {2.2}Compressione di Huffman}{8}%
+\contentsline {section}{\numberline {2.3}Albero di copertura minimo}{9}%

@@ -233,4 +233,32 @@ La compressione di caratteri di Huffman si basa sull'idea di creare una codifica
 \end{algorithmic}
 \end{algorithm}
 
+\newpage
+\section{Albero di copertura minimo}
+Questo problema viene risolto da due algoritmi. 
+
+L'idea del primo (Kruskal) e' quella di ingrandire sottoinsiemi disgiunti di un albero, connettendoli tra loro fino ad avere l'albero complessivo.
+
+\begin{algorithm}
+\caption{Kruskal(Edge[]A, int n, int m)\label{alg:cap}}
+
+\begin{algorithmic}
+\State Set T = Set();
+\State MFSET M = Mfset(n);
+\State {ordina A in ordine crescente di pesi};
+\State int count = 0;
+\State int i = 1;
+\While{count $<$ n-1 and i $\leq$ m}
+	\If{M.find(A[i].u $\neq$ M.find(A[i].v}
+	\State M.merge(A[i].u,A[i].v)
+	\State T.insert(A[i])
+	\State count++
+	\EndIf
+	\State i++
+\EndWhile
+
+\end{algorithmic}
+\end{algorithm}
+
+
 \end{document}
