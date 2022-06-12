@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.10)  12 JUN 2022 11:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.10)  12 JUN 2022 15:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -475,6 +475,9 @@ LaTeX Warning: Label `alg:cap' multiply defined.
 
 LaTeX Warning: Label `alg:cap' multiply defined.
 
+
+LaTeX Warning: Label `alg:cap' multiply defined.
+
 )
 \openout1 = `ASD2.aux'.
 
@@ -550,16 +553,20 @@ ri-cav-abile la soluzione.
 Chapter 2.
 [7
 
-] [8] [9] (./ASD2.aux)
+] [8] [9]
+Chapter 3.
+[10
+
+] (./ASD2.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14625 strings out of 481239
- 288836 string characters out of 5920377
- 511163 words of memory out of 5000000
- 29645 multiletter control sequences out of 15000+600000
+ 14626 strings out of 481239
+ 288849 string characters out of 5920377
+ 511165 words of memory out of 5000000
+ 29646 multiletter control sequences out of 15000+600000
  537851 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,60p,408b,294s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -572,10 +579,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
 type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb>
-Output written on ASD2.pdf (10 pages, 115312 bytes).
+Output written on ASD2.pdf (11 pages, 117323 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 79 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

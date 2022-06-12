@@ -9,3 +9,5 @@
 \contentsline {section}{\numberline {2.1}Insieme di intervalli}{7}%
 \contentsline {section}{\numberline {2.2}Compressione di Huffman}{8}%
 \contentsline {section}{\numberline {2.3}Albero di copertura minimo}{9}%
+\contentsline {chapter}{\numberline {3}Esami vecchi}{10}%
+\contentsline {section}{\numberline {3.1}Octals}{10}%

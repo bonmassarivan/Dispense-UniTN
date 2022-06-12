@@ -260,5 +260,26 @@ L'idea del primo (Kruskal) e' quella di ingrandire sottoinsiemi disgiunti di un 
 \end{algorithmic}
 \end{algorithm}
 
+\chapter{Esami vecchi}
+\section{Octals}
+Scrivere un algoritmo che stampa tutti gli ottali (numeri da 0 a 7) con n cifre.
 
+Viene riportato solamente la funzione ricorsiva. Il wrapper inizializzava l'array S soluzione e chiamava la funzione con i seguenti valori: S,n,-1
+
+\begin{algorithm}
+\caption{octalsRec(int n)\label{alg:cap}}
+\begin{algorithmic}
+\If{i==0}
+	\State print S
+\Else
+	\For{d==0 to 7}
+		\If{d $\neq$ prev}
+			\State S[i] = d;
+			\State octalsRec(S,i-1,d);
+		\EndIf
+	\EndFor
+\EndIf
+
+\end{algorithmic}
+\end{algorithm}
 \end{document}
