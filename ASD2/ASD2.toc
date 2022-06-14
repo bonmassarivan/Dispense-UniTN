@@ -9,5 +9,15 @@
 \contentsline {section}{\numberline {2.1}Insieme di intervalli}{7}%
 \contentsline {section}{\numberline {2.2}Compressione di Huffman}{8}%
 \contentsline {section}{\numberline {2.3}Albero di copertura minimo}{9}%
-\contentsline {chapter}{\numberline {3}Esami vecchi}{10}%
-\contentsline {section}{\numberline {3.1}Octals}{10}%
+\contentsline {chapter}{\numberline {3}Programmazione dinamica - esami}{10}%
+\contentsline {section}{\numberline {3.1}Sequenza k-contigua massimale}{10}%
+\contentsline {section}{\numberline {3.2}Max Sum Increasing}{11}%
+\contentsline {section}{\numberline {3.3}Small sum}{12}%
+\contentsline {chapter}{\numberline {4}Backtracking - esami}{13}%
+\contentsline {section}{\numberline {4.1}Octals}{13}%
+\contentsline {section}{\numberline {4.2}Binary}{14}%
+\contentsline {section}{\numberline {4.3}Sequenza k-limitata}{15}%
+\contentsline {section}{\numberline {4.4}PrintBits}{15}%
+\contentsline {section}{\numberline {4.5}Primes}{16}%
+\contentsline {chapter}{\numberline {5}Misc - esami}{17}%
+\contentsline {section}{\numberline {5.1}Meeting point}{17}%

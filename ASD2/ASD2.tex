@@ -14,9 +14,13 @@
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 \usetikzlibrary{matrix}
 \usepackage{setspace}
+\usepackage{amsmath}
 
 \title {Dispensa ASD 2}
 \author{Bonmassar Ivan}
+
+\algnewcommand\algorithmicforeach{\textbf{for each}}
+\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
 
 \begin{document}
 
@@ -260,7 +264,107 @@ L'idea del primo (Kruskal) e' quella di ingrandire sottoinsiemi disgiunti di un 
 \end{algorithmic}
 \end{algorithm}
 
-\chapter{Esami vecchi}
+
+
+\chapter{Programmazione dinamica - esami}
+\section{Sequenza k-contigua massimale}
+Una sequenza k-contigua e' una sottosequenza che deriva dalla cancellazione di al piu' k elementi consecutivi dalla sequenza originale.
+
+Esempio: 
+
+k=1
+A[1,2,3,4,5,6] => $A_c$[1,3,5] 
+
+Scrivere un algoritmo che trova quella massimale.
+
+\begin{algorithm}
+\caption{kContigua(int[]v, int n, int k)\label{cap:alg}}
+\begin{algorithmic}
+\State int[][] DP = -1;
+\State return kContiguaRec(V,n,k,DP)
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{kContiguaRec(int[]v, int i, int j,int[][] DP)\label{cap:alg}}
+\begin{algorithmic}
+\If{i $\leq$ 0}
+	\State return 0
+\EndIf
+\If{DP[i][j] $<$ 0 }
+	\If{j==0}
+		\State DP[i][j] = kContiguaRec(V,i,j-1,DP) + V[i]
+	\Else
+		\State DP[i][j] = max(kContiguaRec(V,i-1,j-1,DP),kContiguaRec(V,i-1, j, DP)+V[i])
+	\EndIf
+\EndIf		
+return DP[i][j]
+\end{algorithmic}
+\end{algorithm}
+
+\section{Max Sum Increasing}
+Scrivere un algoritmo che prenda in input un array di numeri e che calcoli il valore massimo della somma tra i numeri crescenti. Esempio:\\
+A=[2, 102, 3, 4, 101, 5, 6] => 2+3+4+101 = 110;
+
+L'idea e' la seguente:
+
+\begin{equation}
+  DP =
+    \begin{cases}
+      A[i] & \forall j, 1 \leq j \leq i : A[i] \leq A[j]\\
+      max{DP[j]: 1 \leq j \leq i-1 \land A[j] < A[i]}+A[i] & otherwise      
+    \end{cases}       
+\end{equation}
+\begin{algorithm}
+\caption{maxSumIncreasing(int[] A, int n)\label{alg:cap}}
+\begin{algorithmic}
+\State int[] DP = new int[1..n]
+\For{i = 1 to n}
+	\State DP[i] = A[i]
+	\For{j = 1 to i-1}
+		\If{A[j] $<$ A[i] and DP[j] + A[i] $>$ DP[i]}
+			\State DP[i] = DP[j]+A[i];
+		\EndIf
+	\EndFor
+
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+\newpage
+\section{Small sum}
+Trovare il sottoinsieme con meno elementi per riempire uno zaino di capacita' C, dati un vettore di pesi W di dimensione n
+
+L'idea e' la seguente:
+
+\begin{equation}
+DP = 
+	\begin{cases}
+		\infty & c < 0 \\
+		\infty & i = 0\\
+		0 & c = 0 \\
+		min(DP[i-1][c],DP[i-1][c-W[i]]+1) & c > 0 \land i > 0
+	\end{cases}
+\end{equation}
+
+\begin{algorithm}
+\caption{ssRec(int[][] DP, int c, int[]W, int i)\label{alg:cap}}
+\begin{algorithmic}
+\If{c $<$ 0 }
+	\State return $\infty$
+\ElsIf{i = 0}
+	\State return $\infty$
+
+\ElsIf{c = 0}
+	\State return 0
+
+\Else
+	\If{DP[i][c] $>$ 0}
+		\State DP[i][c] = min(ssRec(DP, c, W, i-1), ssRec(DP, c-W[i], W,i-1)+1)
+	\EndIf
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+\chapter{Backtracking - esami}
 \section{Octals}
 Scrivere un algoritmo che stampa tutti gli ottali (numeri da 0 a 7) con n cifre.
 
@@ -280,6 +384,112 @@ Viene riportato solamente la funzione ricorsiva. Il wrapper inizializzava l'arra
 	\EndFor
 \EndIf
 
+\end{algorithmic}
+\end{algorithm}
+
+\newpage
+\section{Binary}
+Scrivere un algoritmo che prenda in input n, $n_0$ e $n_1$. Dovra' stampare le permutazioni di n cifre con massimo $n_0$ 0 consecutivi e massimo $n_1$ 1 consecutivi. 
+
+Qui viene riportato soltanto la funzione ricorsiva. La funzione wrapper crea l'array S e poi chiama la funzione ricorsiva 
+\begin{algorithm}
+\caption{binaryRec(int[] S, int n, int $n_0$, int $n_1$, int $i_0$, int $_1$)}
+\begin{algorithmic}
+\If {n==0}
+	\State print S
+\EndIf
+\If{$i_0 >$ 0}
+	\State S[n] =0;
+	\State binaryRec(S,n-1,$n_0$,$n_1$,$i_0$-1, $n_1$)
+\EndIf
+\If{$i_1 > $ 0 }
+	\State S[n] =1;
+	\State binaryRec(S,n-1, $n_0$, $i_1$-1,$i_1$)
+\EndIf	
+\end{algorithmic}
+\end{algorithm}
+\newpage
+\section{Sequenza k-limitata}
+Scrivere un algoritmo che prenda in input un vettore A[n] e un valore k e stampi tutte le sequenze k-limitate. Esempio: 
+
+A = [4,6,3,1,4] e k = 1
+
+le sottosequenze sono :\\
+$[1][3][6][4][][4,3][4,3,4],[4,4] ...$
+
+\begin{algorithm}
+\caption{k-SequenzeRec(int[] A, Stack S, int i, int k)\label{alg:cap}}
+\begin{algorithmic}
+
+\If {i==0}
+	\State print S
+\Else
+	\If {S.isEmpty() or $|$A[i] - S.top() $leq$ k$|$}
+		\State S.push(A[i])
+		\State k-SequenzeRec(A, S, i-1, k);
+		\State S.pop()
+	\EndIf
+	\State k-SequenzeRec(A, S, i-1, k)
+
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+
+\section{PrintBits}
+Scrivere un algoritmo che stampi le sequenze di n bit senza 1 consecutivi.
+
+\begin{algorithm}
+\caption{printBitsRec(int[]S, int n, int i)\label{alg:cap}}
+\begin{algorithmic}
+\If{i == n+1}
+	\State print S
+\EndIf
+
+\If{ i == 1 or S[i-1] $\neq$ 1}
+	\State S[i] = 1
+	\State printBitRec(S, n, i+1);
+\Else
+	\State S[i] = 0;
+	\State printBitsRec(S,n,i+1);
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+\newpage
+\section{Primes}
+Scrivere un algoritmo che prende in input un array P con i primi p numeri primi, un intero n e un intero k. Stampare tutte le somme di primi possibili per raggiungere n con esattamente k addendi. 
+
+\begin{algorithm}
+\caption{primesRec(int[] S, int[] P, int p, int n, int k)\label{alg:cap}}
+\begin{algorithmic}
+\If{k == 0 \textbf{and} n == 0}
+	\State print S
+\EndIf
+
+\If{k $>$ 0 \textbf{and} n $>$ 0 \textbf{and} p $>$ 0   }
+	\State primesRec(S,P,p-1,n,k)
+	\State S[k] = P[p]
+	\State primesRec($S,P,p-1,n-P[p],k-1$)
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+\chapter{Misc - esami}
+
+\section{Meeting point}
+Scrivere un algoritmo che calcola il punto di incontro tra due nodi tale che questo sia a distanza uguale tra i due. Grafo pesato.
+
+Basta utilizzare shortestPath visto nella prima parte e poi ciclare sui due array di risultato per vedere se ce n'e' uno uguale:
+
+\begin{algorithm}
+\caption{meetingPoint(Graph G, Node u, Node v)\label{cap:alg}}
+\begin{algorithmic}
+\State int[] $d_u$ = shortestPath(G,u);
+\State int[] $d_v$ = shortestPath(G,v);
+\ForEach{u in G}
+	\If{$d_u$ == $d_v$ and $d_u \neq \infty$ }
+		\State return true
+	\EndIf
+\EndFor
 \end{algorithmic}
 \end{algorithm}
 \end{document}
