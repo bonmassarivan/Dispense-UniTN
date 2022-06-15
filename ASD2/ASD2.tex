@@ -370,7 +370,66 @@ DP =
 CHIEDI A DAVE
 
 
+\newpage
+\section{Paths}
+Data una matrice $n{\times}n$ calcolare il numero di sentieri per arrivare nella casella in basso a destra potendo andare solo in basso e a destra
+
+Complessita': $O(n^2)$
+
+\begin{algorithm}
+\caption{paths(int n)\label{alg:cap}}
+\begin{algorithmic}
+\State int[][] DP = new int [0...n][0...n];
+\For{i = 1 to n}
+	\State DP[i][0] = DP[0][i] = 1
+\EndFor
+
+\For{i = 1 to n}
+	\For{j = 1 to n}
+		\State DP[i][j] = DP[i-1][j] + DP[i][j-1];
+	\EndFor
+\EndFor
+return DP[n][n];
+\end{algorithmic}
+\end{algorithm}
+
+
 \chapter{Backtracking - esami}
+\section{Palindromi}
+Scrivere tutte le permutazioni di serie di numeri palindrome tali che la loro somma sia uguale a n. Esempio:
+
+n =6 $=>$ [1,2,2,1], [1,1,1,1,1,1], [2,2,2] ecc.
+
+\begin{algorithm}
+
+\caption{palindrome(int n)\label{cap:alg}}
+\begin{algorithmic}
+\State int[] S = new int[1...n/2]
+\State palRec(S,1,n)
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+
+\caption{palRec(int[] S, int i, int missing)\label{cap:alg}}
+\begin{algorithmic}
+\For{k = 1 to i-1}
+	\State print S[k]
+\EndFor	
+\If{missing $>$ 0}
+	\State print missing
+\EndIf
+\For{k=i-1 \textbf{downto} 1}
+	\State print S[k]
+\EndFor
+\For{j=1 to missing/2}
+	\State S[i] = j;
+	palRec$(S,i+1,missing-2\cdot j)$
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\newpage
 \section{Octals}
 Scrivere un algoritmo che stampa tutti gli ottali (numeri da 0 a 7) con n cifre.
 

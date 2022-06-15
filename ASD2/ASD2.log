@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.10)  15 JUN 2022 11:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.10)  15 JUN 2022 14:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -546,6 +546,15 @@ LaTeX Warning: Label `alg:cap' multiply defined.
 LaTeX Warning: Label `alg:cap' multiply defined.
 
 
+LaTeX Warning: Label `cap:alg' multiply defined.
+
+
+LaTeX Warning: Label `cap:alg' multiply defined.
+
+
+LaTeX Warning: Label `alg:cap' multiply defined.
+
+
 LaTeX Warning: Label `alg:cap' multiply defined.
 
 
@@ -675,15 +684,15 @@ Overfull \hbox (12.9697pt too wide) detected at line 317
 \OML/cmm/m/it/10 DP \OT1/cmr/m/n/10 = []
  []
 
-[11] [12]
+[11] [12] [13]
 Chapter 4.
-[13
+[14
 
-] [14] [15] [16]
+] [15] [16] [17] [18]
 Chapter 5.
-[17
+[19
 
-] [18] (./ASD2.aux)
+] [20] (./ASD2.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -707,10 +716,10 @@ public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy10.pfb>
-Output written on ASD2.pdf (19 pages, 151490 bytes).
+Output written on ASD2.pdf (21 pages, 154324 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 119 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
