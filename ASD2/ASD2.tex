@@ -364,6 +364,12 @@ DP =
 \EndIf
 \end{algorithmic}
 \end{algorithm}
+
+\section{Count Rec}
+
+CHIEDI A DAVE
+
+
 \chapter{Backtracking - esami}
 \section{Octals}
 Scrivere un algoritmo che stampa tutti gli ottali (numeri da 0 a 7) con n cifre.
@@ -492,4 +498,41 @@ Basta utilizzare shortestPath visto nella prima parte e poi ciclare sui due arra
 \EndFor
 \end{algorithmic}
 \end{algorithm}
+\newpage
+
+\section{Ciclo hamiltoniano}
+Scrivere un algoritmo che prende in input un grafo G e che ritorni tutti i cicli hamiltoniani.
+
+\begin{algorithm}
+\caption{printHamilton(Graph G)\label{alg:cap}}
+\begin{algorithmic}
+\State int[] path = new int [1...G.n]
+\State boolean[] visited = new int [1...G.n] = false;
+\State visitRec(G,1,1 path, visited)
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+\caption{visitRec(Graph G, Node u, int i, int [] path, boolean[] visited)\label{alg:cap}}
+\begin{algorithmic}
+\State path[i] = u;
+\If{i == G.n }
+	\If{path[1] $\in$ G.adj(u)}
+		\State print path
+	\EndIf
+\Else
+	\State visited[u] = true;
+	\ForEach{v $\in$ G.adj(u)}
+		\If \textbf{not} visited[v]
+			\State visitRed(G,v, i+1, path, visited)
+		\EndIf
+		\State visited[u] = false;
+	\EndFor
+\EndIf
+
+
+\end{algorithmic}
+\end{algorithm}
+
 \end{document}
