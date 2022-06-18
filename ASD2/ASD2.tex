@@ -267,6 +267,57 @@ L'idea del primo (Kruskal) e' quella di ingrandire sottoinsiemi disgiunti di un 
 
 
 \chapter{Programmazione dinamica - esami}
+
+\section{print Bits}
+Algoritmo che conti il numero di array di n bit senza 1 consecutivi.
+
+Complessita' : $O(n^2)$
+
+\begin{equation}
+	DP[n] = \\
+	\begin{cases}
+	1 & n=0 \\
+	2 & n=1 \\
+	DP[i] = DP[i-1] + DP[i-2] & n \geq 2
+	\end{cases}
+\end{equation}
+
+\begin{algorithm}
+\caption{printBits(int n)\label{alg:cap}}
+\begin{algorithmic}
+	\State int DP = new int [0...n]
+	\State DP[0] = 1
+	\State DP[1] = 2
+	\For{i=2 to n}
+		\State DP[i] = DP[i-1] + DP[i-2]
+	\EndFor
+\end{algorithmic}
+\end{algorithm}
+\section{Max Sum Even}
+Dato un vettore A di n interi, calcolare la somma massima di sottovettori pari. Esempio:
+
+A= [9,8,-8,9,10]  = 20 (9,-8,9,10)
+
+\begin{equation}
+  DP[i] =
+    \begin{cases}
+     0 & i \leq 1 \\
+     maxDP{DP[i-2]+A[i-1]+A[i],0} & otherwise
+    \end{cases}  
+\end{equation}
+
+Complessita' : $O(n)$
+
+\begin{algorithm}
+\caption{maxSumEven()\label{alg:cap}}
+\begin{algorithmic}
+\State int[] DP = new int [0...n]
+\State DP[0] = DP[1] = 0;
+\For{i = 2 to n}
+	\State DP[i] = max(DP[i-2]+A[i-1]+A[i],0);
+\EndFor
+\end{algorithmic}
+\end{algorithm}
 \section{Sequenza k-contigua massimale}
 Una sequenza k-contigua e' una sottosequenza che deriva dalla cancellazione di al piu' k elementi consecutivi dalla sequenza originale.
 
@@ -395,6 +446,99 @@ return DP[n][n];
 
 
 \chapter{Backtracking - esami}
+
+\section{print All}
+Scrivere un algoritmo che prenda in input un testo T[] e un pattern P. Elencare tutti gli indici i di P che compongono la sottosequenza P in T.
+
+\begin{algorithm}
+\caption{printAll(Item[] T, int n, Item[] P, int m)\label{alg:cap}}
+\begin{algorithmic}
+\State Stack S = Stack()
+\State printAllRec(S,T,n,P,m)
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+\caption{printAllRec(Stack S, Item[] T, int i, Item[] P, int j)\label{alg:cap}}
+\begin{algorithmic}
+\If{j=0}
+	print S
+\ElsIf{i $\geq$ j}
+	\State {Caso in cui si ignora l'ultimo carattere di P}
+	\State printAllRec(S,T, i-1, P, j)
+	\If{T[i] == P[j]}
+		\State S.push(i)
+		\State printAllRec(S,T,i-1,P,j-1)
+		\State S.pop
+	\EndIf
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+
+\section{printFlags}
+Stampare il numero di bandiere con n colori e k colori tali che siano delle abbinazini accettabili date dalla matriche k$\times$k.
+
+\begin{algorithm}
+\caption{printFlags(boolean[][] A, int n, int k)\label{alg:cap}}
+\begin{algorithmic}
+\State int[] S = new int [1...n]
+\State return printFlagsRec(A,S, 1, k,n)
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{printFlagsRec(boolean[][] A, int[] S, int i, int k, int n)\label{alg:cap}}
+\begin{algorithmic}
+\If{}
+	\State print S
+\Else
+	\For{j = 0 to k}
+		\If{i == 1 \textbf{or} A[j][S[i-1]}
+			\State S[i] = j
+			printFlagsRec(A,S,i+1,k,n)
+		\EndIf
+
+	\EndFor
+\EndIf
+
+\end{algorithmic}
+\end{algorithm}
+\newpage
+\section{Count paths}
+Data una matrice contare il numero di modi per arrivare dalla casella (1,1) alla casella (n,n). Le mosse possibili sono spostarsi di A[i][j] caselle a destra sinistra, giu' o in alto, purche' si visitino solo una volta.
+
+\begin{algorithm}
+\caption{countPaths(int[][] A, int n)}
+\begin{algorithmic}
+\State boolean visted = new boolean[1...n][1...n] = false;
+\State countPathsRec(A,n,
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+\caption{countPathsRec(int[][] A, int n, boolean visited[][],int i, int j)}
+\begin{algorithmic}
+\If{i==n \textbf{and} j=n}
+	return 1
+\ElsIf{1 $\leq i \leq n$ \textbf{and} 1 $\leq j \leq n$ \textbf{and not} visited[i][j] }
+	\State visited[i][j] = true
+	\State int res = 
+	\State countPathsRec(A,n,visited, i+A[i][j],j) + 
+	\State countPathsRec(A,n,visited, i-A[i][j],j) + 
+	
+	\State countPathsRec(A,n,visited, i,j+A[i][j]) + 
+	\State countPathsRec(A,n,visited, i,j-A[i][j]) 
+	\State visited[i][j] = false;
+	\State return ret
+\Else
+	\State return 0
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+\newpage
 \section{Palindromi}
 Scrivere tutte le permutazioni di serie di numeri palindrome tali che la loro somma sia uguale a n. Esempio:
 
@@ -540,6 +684,37 @@ Scrivere un algoritmo che prende in input un array P con i primi p numeri primi,
 \end{algorithm}
 \chapter{Misc - esami}
 
+\section{Largest cross}
+Trovare la dimensione della croce di 1 contenuta all'interno della matrice $n\times n$ 
+
+Complessita' $O(n^3)$
+
+\begin{algorithm}
+\caption{cross(int[][] M, int n)\label{alg:cap}}
+\begin{algorithmic}
+\State int maxSoFar = 0;
+\For{i = 1 to n}
+	\For{j = 1 to n}
+		\If{M[i][j] = 1}
+			int dim = largestCross(M,n,i,j)
+			maxSoFar = max(maxSoFar, dim)
+		\EndIf
+	\EndFor
+
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{largestCross(int[][] M, int n, int i, int j)}
+\begin{algorithmic}
+\State int k = 1;
+\While{$i+k \leq n \textbf{and} j+k \leq n \textbf{and} i-k \geq 1 \textbf{and}  j-k \geq 1 \textbf{and} M[i][j+k] + M[i+k][j] + M[i-k][j] + M[i][j-k] == 4$}
+	\State k++
+\EndWhile
+\State return k
+\end{algorithmic}
+\end{algorithm}
 \section{Meeting point}
 Scrivere un algoritmo che calcola il punto di incontro tra due nodi tale che questo sia a distanza uguale tra i due. Grafo pesato.
 
