@@ -10,26 +10,28 @@
 \contentsline {section}{\numberline {2.2}Compressione di Huffman}{9}%
 \contentsline {section}{\numberline {2.3}Albero di copertura minimo}{10}%
 \contentsline {chapter}{\numberline {3}Programmazione dinamica - esami}{11}%
-\contentsline {section}{\numberline {3.1}profit}{11}%
-\contentsline {section}{\numberline {3.2}Minimo palindromo}{11}%
-\contentsline {section}{\numberline {3.3}print Bits}{12}%
-\contentsline {section}{\numberline {3.4}Max Sum Even}{13}%
-\contentsline {section}{\numberline {3.5}Sequenza k-contigua massimale}{13}%
-\contentsline {section}{\numberline {3.6}Max Sum Increasing}{14}%
-\contentsline {section}{\numberline {3.7}Small sum}{15}%
-\contentsline {section}{\numberline {3.8}Count Rec}{15}%
-\contentsline {section}{\numberline {3.9}Paths}{16}%
-\contentsline {chapter}{\numberline {4}Backtracking - esami}{17}%
-\contentsline {section}{\numberline {4.1}print All}{17}%
-\contentsline {section}{\numberline {4.2}printFlags}{17}%
-\contentsline {section}{\numberline {4.3}Count paths}{18}%
-\contentsline {section}{\numberline {4.4}Palindromi}{19}%
-\contentsline {section}{\numberline {4.5}Octals}{20}%
-\contentsline {section}{\numberline {4.6}Binary}{21}%
-\contentsline {section}{\numberline {4.7}Sequenza k-limitata}{22}%
-\contentsline {section}{\numberline {4.8}PrintBits}{22}%
-\contentsline {section}{\numberline {4.9}Primes}{23}%
-\contentsline {chapter}{\numberline {5}Misc - esami}{24}%
-\contentsline {section}{\numberline {5.1}Largest cross}{24}%
-\contentsline {section}{\numberline {5.2}Meeting point}{24}%
-\contentsline {section}{\numberline {5.3}Ciclo hamiltoniano}{26}%
+\contentsline {section}{\numberline {3.1}Mosse su scacchiera}{11}%
+\contentsline {section}{\numberline {3.2}profit}{12}%
+\contentsline {section}{\numberline {3.3}Minimo palindromo}{12}%
+\contentsline {section}{\numberline {3.4}print Bits}{12}%
+\contentsline {section}{\numberline {3.5}Max Sum Even}{13}%
+\contentsline {section}{\numberline {3.6}Sequenza k-contigua massimale}{14}%
+\contentsline {section}{\numberline {3.7}Max Sum Increasing}{14}%
+\contentsline {section}{\numberline {3.8}Small sum}{16}%
+\contentsline {section}{\numberline {3.9}Count Rec}{16}%
+\contentsline {section}{\numberline {3.10}Paths}{17}%
+\contentsline {chapter}{\numberline {4}Backtracking - esami}{18}%
+\contentsline {section}{\numberline {4.1}print All}{18}%
+\contentsline {section}{\numberline {4.2}printFlags}{18}%
+\contentsline {section}{\numberline {4.3}Count paths}{19}%
+\contentsline {section}{\numberline {4.4}Palindromi}{20}%
+\contentsline {section}{\numberline {4.5}Octals}{21}%
+\contentsline {section}{\numberline {4.6}Binary}{22}%
+\contentsline {section}{\numberline {4.7}Sequenza k-limitata}{23}%
+\contentsline {section}{\numberline {4.8}PrintBits}{23}%
+\contentsline {section}{\numberline {4.9}Primes}{24}%
+\contentsline {chapter}{\numberline {5}Misc - esami}{25}%
+\contentsline {section}{\numberline {5.1}Skipass}{25}%
+\contentsline {section}{\numberline {5.2}Largest cross}{25}%
+\contentsline {section}{\numberline {5.3}Meeting point}{26}%
+\contentsline {section}{\numberline {5.4}Ciclo hamiltoniano}{27}%

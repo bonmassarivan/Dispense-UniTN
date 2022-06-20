@@ -32,6 +32,8 @@
 \section{Hateville}
 
 Ad Hateville viene organizzata una sagra. Per la raccolta fondi la casa i donera' n soldi solo se non doneranno entrambi i suoi vicini i-1 e i+1. Scrivere un algoritmo che restituisca il numero maggiore di soldi.
+
+Complessita' $O(n)$
 \begin{algorithmic}
 \begin{algorithm}
 \caption{Hateville(int[] DP, int n)}\label{alg:cap}
@@ -80,6 +82,7 @@ Dato un insieme di oggetti con peso e con un loro valore e data una capacita' C 
 This should return the correct matrix containing the solution in the bottom right corner.
 
 C'e' anche una versione ricorsiva dello zaino con la memoization. La memoization e' l'approccio top-down, in pratica si controlla prima se quel problema e' gia stato risolto. DP e' inizializzata nella funzione wrapper con tutti gli elementi posti a -1.
+Complessita' $O(n2^k)$
 
 \begin{algorithm}
 \caption{Knapsack(int[] w, int[] p, int C, int n)}\label{alg:cap}
@@ -106,6 +109,8 @@ La versione dello zaino senza fondo presenta invece un array DP e non una matric
 \section{Sottosequenza comune massimale}
 Per SCM (d'ora in avanti LCS per longest common subsequence) s'intende la sottosequenza piu' lunga che due parole hanno in comune. Per esempio\\
 AAAATTGA e AAATA, LCS coincide con AAATA, in quanto la sottosequenza non deve essere di fila.
+
+Complessita' $O(2^n(m+n)$
 
 \begin{algorithm}
 \caption{int LCS(ITEM[] T, ITEM[] U, int n, int m)}\label{alg:cap}
@@ -140,6 +145,7 @@ Calcolare il minor numero k necessario per un pattern per essere trovato in una 
 BAB e' in ABABAB con k=0 modifiche. \\
 unesempio e' contenuto in questoeunoscempio con k = 2 modifiche.
 
+
 \begin{algorithm}
 \caption{stringMatching()}\label{alg:cap}
 \begin{algorithmic}
@@ -165,6 +171,8 @@ unesempio e' contenuto in questoeunoscempio con k = 2 modifiche.
 Questo problema puo' essere spiegato con una sala riunioni e un'organizzazione degli appuntamenti che massimizza i profitti.
 
 Per risolverlo, l'algoritmo fa uso di "predecessori" ovvero dell'intervallo di tempo appena prima quello selezionato.
+
+Complessita' $O(n^2)$
 
 \begin{algorithm}
 \caption{Set maxSet(int[] a, int[] b, int[]w, int n)\label{alg:cap}}
@@ -267,6 +275,37 @@ L'idea del primo (Kruskal) e' quella di ingrandire sottoinsiemi disgiunti di un 
 
 
 \chapter{Programmazione dinamica - esami}
+
+\section{Mosse su scacchiera}
+Scrivre un algoritmo che ritorna il massimo profitto basato sulla matrice $n\times n$ con un pedone che puo' muoversi di uno in diagonale oppure andando dritto
+
+Complessita' $O(n^2)$ 
+\begin{equation}
+	DP =
+	\begin{cases}
+	- \infty & c<1 \textbf{or} c>n \\
+	P[1,c] & r = 1 \textbf{and} 1\leq c \leq n \\
+	max \Bigg ( DP[r-1][c-1], DP[r-1][c], DP[r-1][c+1]) + P[r][c] & otherwise
+	\end{cases}
+\end{equation}
+
+\begin{algorithm}
+\caption{searchPath(int[][] P, int n}
+\begin{algorithmic}
+\State int DP = new int[1...n][1...n]
+\For{int c = 1 to n}
+	\State DP[1][c] = P[1][c]
+\EndFor
+
+\For{r = 2 to n}
+	\For{c=1 to n}
+		\State DP[r][c] = max(DP[r][c],DP[r-1][c] + P[r][c],DP[r-1][c+1] + P[r][c], DP[r-1][c-1] + P[r][c]
+	\EndFor	
+\EndFor
+\State return max(DP[n])
+\end{algorithmic}
+\end{algorithm}
+
 \section{profit}
 Scrivere un algoritmo che da il profitto massimo dipendentemente se si decide di vendere o comprare un'azione in un determinato giorno V[i].
 
@@ -376,6 +415,8 @@ Dato un vettore A di n interi, calcolare la somma massima di sottovettori pari. 
 
 A= [9,8,-8,9,10]  = 20 (9,-8,9,10)
 
+
+
 \begin{equation}
   DP[i] =
     \begin{cases}
@@ -435,6 +476,8 @@ return DP[i][j]
 Scrivere un algoritmo che prenda in input un array di numeri e che calcoli il valore massimo della somma tra i numeri crescenti. Esempio:\\
 A=[2, 102, 3, 4, 101, 5, 6] => 2+3+4+101 = 110;
 
+Complessita' $O(n^2)$
+
 L'idea e' la seguente:
 
 \begin{equation}
@@ -462,6 +505,8 @@ L'idea e' la seguente:
 \newpage
 \section{Small sum}
 Trovare il sottoinsieme con meno elementi per riempire uno zaino di capacita' C, dati un vettore di pesi W di dimensione n
+Complessita' $O(nC)$
+
 
 L'idea e' la seguente:
 
@@ -587,6 +632,8 @@ Stampare il numero di bandiere con n colori e k colori tali che siano delle abbi
 \section{Count paths}
 Data una matrice contare il numero di modi per arrivare dalla casella (1,1) alla casella (n,n). Le mosse possibili sono spostarsi di A[i][j] caselle a destra sinistra, giu' o in alto, purche' si visitino solo una volta.
 
+Complessita' $O(4^{n^2})$
+
 \begin{algorithm}
 \caption{countPaths(int[][] A, int n)}
 \begin{algorithmic}
@@ -679,6 +726,8 @@ Viene riportato solamente la funzione ricorsiva. Il wrapper inizializzava l'arra
 Scrivere un algoritmo che prenda in input n, $n_0$ e $n_1$. Dovra' stampare le permutazioni di n cifre con massimo $n_0$ 0 consecutivi e massimo $n_1$ 1 consecutivi. 
 
 Qui viene riportato soltanto la funzione ricorsiva. La funzione wrapper crea l'array S e poi chiama la funzione ricorsiva 
+
+Complessita' $O(n\cdot 2^n)$
 \begin{algorithm}
 \caption{binaryRec(int[] S, int n, int $n_0$, int $n_1$, int $i_0$, int $_1$)}
 \begin{algorithmic}
@@ -703,6 +752,8 @@ A = [4,6,3,1,4] e k = 1
 
 le sottosequenze sono :\\
 $[1][3][6][4][][4,3][4,3,4],[4,4] ...$
+
+Complessita' $O(n\cdot 2^n)$
 
 \begin{algorithm}
 \caption{k-SequenzeRec(int[] A, Stack S, int i, int k)\label{alg:cap}}
@@ -745,6 +796,7 @@ Scrivere un algoritmo che stampi le sequenze di n bit senza 1 consecutivi.
 \newpage
 \section{Primes}
 Scrivere un algoritmo che prende in input un array P con i primi p numeri primi, un intero n e un intero k. Stampare tutte le somme di primi possibili per raggiungere n con esattamente k addendi. 
+Complessita' $O(n^k)$
 
 \begin{algorithm}
 \caption{primesRec(int[] S, int[] P, int p, int n, int k)\label{alg:cap}}
@@ -761,6 +813,34 @@ Scrivere un algoritmo che prende in input un array P con i primi p numeri primi,
 \end{algorithmic}
 \end{algorithm}
 \chapter{Misc - esami}
+
+\section{Skipass}
+\begin{algorithm}
+\caption{minSkipass(int[] start, int[] end, int n}
+\begin{algorithmic}
+\State sort(start)
+\State sort(end)
+\State int available = 0;
+\State int bought = 0;
+\State int s, e = 1;
+
+\While{$s\leq n$}
+	\If{start[s] $<$ end[e]}
+		\If{available $>$ 0}
+			\State available++
+		\Else
+			\State bought++	
+		\EndIf
+		\State s++
+	\Else
+		\State available++
+		\State e++
+	\EndIf
+
+\EndWhile
+\State return bought
+\end{algorithmic}
+\end{algorithm}
 
 \section{Largest cross}
 Trovare la dimensione della croce di 1 contenuta all'interno della matrice $n\times n$ 
@@ -797,7 +877,7 @@ Complessita' $O(n^3)$
 Scrivere un algoritmo che calcola il punto di incontro tra due nodi tale che questo sia a distanza uguale tra i due. Grafo pesato.
 
 Basta utilizzare shortestPath visto nella prima parte e poi ciclare sui due array di risultato per vedere se ce n'e' uno uguale:
-
+Complessita' $O(m log n)$
 \begin{algorithm}
 \caption{meetingPoint(Graph G, Node u, Node v)\label{cap:alg}}
 \begin{algorithmic}
@@ -814,6 +894,7 @@ Basta utilizzare shortestPath visto nella prima parte e poi ciclare sui due arra
 
 \section{Ciclo hamiltoniano}
 Scrivere un algoritmo che prende in input un grafo G e che ritorni tutti i cicli hamiltoniani.
+Complessita' $O(n!)$
 
 \begin{algorithm}
 \caption{printHamilton(Graph G)\label{alg:cap}}
