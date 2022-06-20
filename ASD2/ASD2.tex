@@ -267,7 +267,85 @@ L'idea del primo (Kruskal) e' quella di ingrandire sottoinsiemi disgiunti di un 
 
 
 \chapter{Programmazione dinamica - esami}
+\section{profit}
+Scrivere un algoritmo che da il profitto massimo dipendentemente se si decide di vendere o comprare un'azione in un determinato giorno V[i].
 
+Complessita' $O(N^2)$
+
+\begin{equation}
+DP =
+	\begin{cases}
+		k \cdot V[i] & i = n \\
+		DP[i][j] = max(DP[i+1][j], DP[i+1][j+1] - V[i], DP[i+1][0]+k*V[i]) & otherwise
+	\end{cases}
+\end{equation}
+
+\begin{algorithm}
+\caption{profit(int[] V, int n)}
+\begin{algorithmic}
+\State int[][] DP = new int[1...n][1...n]
+\For{i = 1 to n}
+	\For{j = 1 to n}
+		\State DP[i][j] = -1
+	\EndFor
+\EndFor
+
+profitRec(V,n,1,0,DP)
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+\caption{profitRec(int[] V, int n,int i, int j, int[][]DP)}
+\begin{algorithmic}
+\If{i == n}
+	return V[i] $\cdot$ j
+\EndIf
+
+\If{DP[i][j] < 0}
+	\State DP[i][j] = max(profitRec(V,n,i+1,j,DP),profitRec(V,n,i+1,j+1,DP)-V[i], profitRec(V,n,i+1,0,DP)+j*V[i])
+\EndIf
+return DP[i][j]
+\end{algorithmic}
+\end{algorithm}
+\section{Minimo palindromo}
+
+Scrivere un algoritmo che presa in input una stringa, restituisca quante modifiche vanno fatte per renderla palindroma.
+
+Complessita' $O(n^2)$
+\begin{equation}
+DP = 
+	\begin{cases}
+	0 & i \geq j \\
+	DP[i][j] = min(DP[i-1][j] + 1, DP[i][j-1]+1, DP[i-1][j-1] + iff{S[i]==S[j],0,1})
+	\end{cases}
+\end{equation}
+
+\begin{algorithm}
+\caption{minPalindroma(Item[] S, int n)\label{alg:cap}}
+\begin{algorithmic}
+\State int[][] DP = new int[1...n][1...n]
+\For{i = 1 to n}
+	\For{j = 1 to n}
+		\State DP[i][j] = -1;
+	\EndFor
+\EndFor
+
+\State minPalRec(S,n,1,1)
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{minPalRec(Item[] S, int n, int i, int j)\label{alg:cap}}
+\begin{algorithmic}
+\If{ $i\geq j$}
+	return 0
+\EndIf
+\If{DP[i][j] $<$ 0}
+	\State DP[i][j] = min(DP[i-1][j] + 1, DP[i][j-1]+1, DP[i-1][j-1] + iff {S[i]==S[j],0,1})
+\EndIf
+\end{algorithmic}
+\end{algorithm}
 \section{print Bits}
 Algoritmo che conti il numero di array di n bit senza 1 consecutivi.
 
