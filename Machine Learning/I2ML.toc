@@ -1,0 +1,3 @@
+\contentsline {chapter}{\numberline {1}ML Basics}{2}%
+\contentsline {section}{\numberline {1.1}Data}{2}%
+\contentsline {section}{\numberline {1.2}Types of Learning}{3}%
