@@ -3,7 +3,7 @@
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
 \usepackage{amsthm}
-
+\usepackage{mathrsfs}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 
@@ -33,6 +33,10 @@ So in our previous example, we will generalize and say that bananas are yellow.
 	Describes how likely certain events are.
 \end{definition}
 
+High probability: round apples
+
+Low probability: square apples
+
 \section{Types of Learning}
 \textbf{SUPERVISED LEARNING}\\
 Supervised learning is when the algorithm is given labeled examples and the predictor should output a label. A further example of this is \textbf{classification}, where the model classifies from a pool of categories. 
@@ -60,7 +64,48 @@ Some examples are:
 
 The idea is that the agent interacts with the environment and receives rewards based on behavior. 
 
+\section{ML Ingredients}
+
+\textbf{TASK}
+
+A task represents the type of prediction being made to solve a problem. 
+
+Assigning each input $ x \in \mathscr{X}$ to an output $y \in \mathscr{Y}$
+
+\textbf{Data}
+
+Data is basically the information required to solve a specific problem and as said previously is usually sampled from an unknown data generating distribution :
+
+$\textbf{p}_{data}$ 
+
+For classification and regression $\textbf{p}_{data} \in \triangle (\mathscr{X} \times \mathscr{Y})$
+
+\includegraphics[scale=0.25]{datasets}
+
+\textbf{Model and hypothesis space}
+
+A model is like a program that solves the problem. There are various models (decision trees, neural networks.. ) and a set of them makes up the hypothesis space. 
+
+\includegraphics[scale=0.24]{hypothesis_space}
+
+\textbf{The objective}
+
+The objective is to minimize an error function $E(f,\textbf{p}_{data})$ to find the optimal function 
+
+$f^{\star} =$ arg min $E(f,\textbf{p}_{data}) $.
+
+This however is really hard to do because of the too large search space. 
+
+The feasible target is the optimal one in a restricted hypothesis space $\mathscr{H}$
+
+$f^{\star}_{\mathscr{H}} =$ arg min $E(f,\textbf{p}_{data}) $.
+
+This is also not doable because we do not have access to $\textbf{p}_{data}$
+\\
+The \textbf{actual target} is then the following: 
+\\
+
+$f^{\star}_{\mathscr{H}} (\mathscr{D}_n) =$ arg min $E(f, \mathscr{D}_n) $. where $\mathscr{D}_n$ is a training set. 
 
 
-
-\end{document}
+\end{document}E(f,\textbf{p}_{data} 

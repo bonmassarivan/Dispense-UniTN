@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.10)  28 JUN 2022 15:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.10)  28 JUN 2022 16:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -60,6 +60,10 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headsep=\skip51
 \dth@everypar=\toks20
 )
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup4
+)
 \c@definition=\count176
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
@@ -112,8 +116,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 14.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 14
+.
 
-[1
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+) [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./I2ML.toc
@@ -141,27 +149,52 @@ Overfull \hbox (43.39409pt too wide) in paragraph at lines 20--21
 
 [2
 
- <./images/data_model.png>] [3] (./I2ML.aux) ) 
+ <./images/data_model.png>]
+<./images/datasets.png, id=20, 1507.6325pt x 1076.02pt>
+File: ./images/datasets.png Graphic file (type png)
+<use ./images/datasets.png>
+Package pdftex.def Info: ./images/datasets.png  used on input line 83.
+(pdftex.def)             Requested size: 376.90721pt x 269.00435pt.
+
+Overfull \hbox (46.90721pt too wide) in paragraph at lines 83--84
+[][] 
+ []
+
+[3]
+<./images/hypothesis_space.png, id=29, 646.415pt x 929.4725pt>
+File: ./images/hypothesis_space.png Graphic file (type png)
+<use ./images/hypothesis_space.png>
+Package pdftex.def Info: ./images/hypothesis_space.png  used on input line 89.
+(pdftex.def)             Requested size: 155.14276pt x 223.07796pt.
+ [4 <./images/datasets.png> <./images/hypothesis_space.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 103--107
+
+ []
+
+[5] (./I2ML.aux) ) 
 Here is how much of TeX's memory you used:
- 1304 strings out of 481239
- 18598 string characters out of 5920377
- 251066 words of memory out of 5000000
- 16599 multiletter control sequences out of 15000+600000
- 537851 words of font info for 42 fonts, out of 8000000 for 9000
+ 1347 strings out of 481239
+ 19521 string characters out of 5920377
+ 252172 words of memory out of 5000000
+ 16632 multiletter control sequences out of 15000+600000
+ 538840 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,6n,25p,352b,179s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb>
-Output written on I2ML.pdf (4 pages, 789476 bytes).
+ 30i,6n,25p,352b,185s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
+2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsf
+s/rsfs7.pfb>
+Output written on I2ML.pdf (6 pages, 1205163 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
- 35 compressed objects within 1 object stream
+ 74 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
