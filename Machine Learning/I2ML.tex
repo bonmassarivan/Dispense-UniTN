@@ -96,16 +96,204 @@ $f^{\star} =$ arg min $E(f,\textbf{p}_{data}) $.
 
 This however is really hard to do because of the too large search space. 
 
-The feasible target is the optimal one in a restricted hypothesis space $\mathscr{H}$
+The \emph{feasible target} is the optimal one in a restricted hypothesis space $\mathscr{H}$
 
 $f^{\star}_{\mathscr{H}} =$ arg min $E(f,\textbf{p}_{data}) $.
 
 This is also not doable because we do not have access to $\textbf{p}_{data}$
 \\
-The \textbf{actual target} is then the following: 
+The \emph{actual target} is then the following: 
 \\
 
 $f^{\star}_{\mathscr{H}} (\mathscr{D}_n) =$ arg min $E(f, \mathscr{D}_n) $. where $\mathscr{D}_n$ is a training set. 
 
+The error function is usually specified as a pointwise-loss $\mathscr{l}(f,z)$ measuring the error of f on the training set z. 
 
-\end{document}E(f,\textbf{p}_{data} 
+The learning algorithm solves the optimization problem which targets the actual target. 
+
+
+\chapter{K-Nearest Neighbor}
+
+Imagine assigning each feature a numeric value, and putting them as coordinates in a feature space. To find which label to give to an example $d$ we can see the k-nearest neighbors. The correct label will be the one that has the majority in k neighbors. 
+
+
+In cases where features are comparable (each feature has the same units) we will use the simple method of Euclidean Distance: 
+
+\[
+D(a,b) = \sqrt{(a_1-b_1)^2+(a_n-b_n)^2}
+\]
+
+\section{Decision boundaries}
+
+\begin{definition}[Decision boundaries]
+	Decision boundaries are places where the the classification of an example changes.
+\end{definition}
+
+These boundaries are a subset of the Voronoi diagram which divides the initial points distribution by equidistant lines. 
+
+\includegraphics[scale=0.2]{voronoi}
+
+Choosing K will have an effect on underfitting and overfitting.
+
+\begin{definition}[Underfitting]
+	Underfitting occurs when the model is not able to achieve a low error value on the training set
+\end{definition}
+
+\begin{definition}[Overfitting]
+	Overfitting occurs when the gap between training set error and test set error is large
+\end{definition}
+
+Some heuristics come into play. It's important to choose an odd number to avoid ties. A general rule of thumb is that k should be lower than the square root of N training examples.
+\\
+\textbf{Weighted k-nn}, uses the same mechanics only that the examples are weighted which means that they will weigh in more in a vote situation.
+
+\textbf{Lazy learning} is when an algorithm simply stores data and operates when given a test example.
+
+\textbf{Eager learning} on the other hand is when given a training set, the algorithm constructs a classification model which then reutilizes. 
+
+\section{Summary}
+When is it useful:
+\begin{itemize}
+	\item Few features per instance
+	\item Lots of training data
+\end{itemize}
+
+Advantages:
+
+\begin{itemize}
+	\item Training is very fast (lazy)
+	\item Learn complex functions
+\end{itemize}
+
+Disadvantages:
+
+\begin{itemize}
+	\item Slow at query time
+\end{itemize}
+
+
+
+
+
+The main issue has to do with dimensionality. Every algorithm requires a dense data set, although K-NN requires to have at least one neighbor in each dimension, which makes for a very heavy computational load.
+
+\chapter{Linear Models}
+\section{Model assumptions}
+Assumptions (when correct) are a great tool to improve an algorithm. They can however lead to overfitting. For K-NN the only assumption that's made is the fact that proximity relates to label. 
+
+\begin{definition}[Bias]
+	The bias of a model is how strong its assumptions are.
+\end{definition}
+
+K-NN and Decision Trees are considered to be low bias. 
+
+\section{Linear models}
+A high-bias assumption is linear separability, which means that the classes can be simply divided by a line (or hyperplane in n dimensions).
+
+A line is defined by a pair of values: 
+
+\[
+0 = w_1f_1 + w_2f_2
+\]
+
+To classify we can input the values into the equation. If it's positive it will be above the line and viceversa.
+
+In n-dimensions: 
+
+\[
+0 = b+ \sum_{i=1}^{n} w_if_i
+\]
+
+\section{Online learning}
+
+This linear model is different because it sees one example at a time. This is useful when taking in data streams (for example from online resources).
+
+The algorithm receives an unlabeled example, it predicts and if it is not correct it updates its model.
+
+\section{Perceptron algorithm}
+This is a linear model that constantly updates when not correct.
+
+\includegraphics[scale=0.25]{perceptron}
+\chapter{Multiclass Classification}
+\begin{definition}[Binary classification]
+	Given an input $\mathscr{X}$, an unknown distribution $D$ over $\mathscr{X}\times \{-1,1\}$
+	a training set D compute a function f.
+\end{definition}
+
+\begin{definition}[Multiclass classification]
+	Given an input $\mathscr{X}$ and a number K of classes, an unknown distribution $D$ over $\mathscr{X}\times K$
+	a training set D compute a function f.
+\end{definition}
+
+None of the current methods work.
+
+The main idea is to modify the perceptron by adding multiple lines. There are two approaches to this.
+
+\section{One vs All (OVA)}
+
+For each label L define a binary problem. All examples with L are positive, the rest is negative.
+
+This poses a problem related to some areas in which it can either be two classes or none at all.
+
+\includegraphics[scale=0.1]{multiclass}
+ How to classify? 
+
+Generally speaking the classifier should provide a level of confidence. To calculate this value we need to use decision boundaries and its distance from the hyperplane.
+ 
+\section{All vs All (AVA)}
+The idea behind AVA is to pair up each permutation of 1v1 pairs. Then, the classifier will receives all examples of i as a +1 and -1 for the j class. When a test point arrives we evaluate on all the $F_{ij}$ classifiers. 
+
+\section{Summary}
+AVA has faster training time but a slower test time. AVA has more chances of error at test time.
+
+\textbf{Evaluation} comes when we need to evaluate a specific performance of an algorithm. Can be done through microaveraging, average over the examples, or macroaveraging, average of the average of each label.
+
+\chapter{Gradient Descent}
+\section{Model based machine learning}
+There are 3 steps to this model:
+\begin{enumerate}
+	\item Pick a model (DT, perceptron)
+	\item Pick a criterion to optimize
+	\item Develop a learning algorithm
+\end{enumerate}
+
+In linear model: 
+\begin{enumerate}
+	\item 0 = b+ $\sum_{j=1}^{n} w_jf_j$
+	\item $\sum_{i=1}^{n}1[y_y(w\cdot x_i + b) \leq 0]$ (0/1 Loss function aka the total number of mistakes)
+	\item $argmin_{w,b}$ $\sum_{i=1}^{n}1[y_y(w\cdot x_i + b) \leq 0]$
+\end{enumerate}
+
+\section{Surrogate loss functions}
+Minimizing the 0/1 Loss function is an NP-hard problem, because of the many local minima and any change in w can change drastically the result. Ideally we would want a convex function so to have at least one minimum.
+
+By \textbf{surrogate loss function} we mean a loss function that provides an upper bound to the 0/1 loss function. 
+
+\begin{itemize}
+	\item 0/1 loss : $l(y,y') = 1[yy'\leq 0]$
+	\item Hinge loss: $l(y,y') = max(0,1-yy')$
+	\item Exponential loss: $l(y,y') = exp(yy')$
+	\item Squared loss: $l(y,y') = (y-y')^2$
+\end{itemize}
+
+\includegraphics[scale=0.2]{surrogate}
+
+\section{Gradient descent}
+We use gradient descent to find a minimum in the function. 
+
+The general approach is to choose a starting point $w$, calculate the derivative and move in that direction.
+
+\[
+w_j = w_j - \eta \frac{d}{dw_i}loss(w)
+\]
+mi piace il pene
+
+
+$\eta$ is the rate at which we move and will change over time.
+
+Since it's changing over time it can be implemented through a perceptron algorithm.
+
+The main problem with gradient descent is local minima: 
+
+\includegraphics[scale=0.2]{local_minima}
+\end{document}
