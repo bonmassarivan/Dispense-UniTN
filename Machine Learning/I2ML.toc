@@ -18,3 +18,4 @@
 \contentsline {section}{\numberline {5.1}Model based machine learning}{12}%
 \contentsline {section}{\numberline {5.2}Surrogate loss functions}{12}%
 \contentsline {section}{\numberline {5.3}Gradient descent}{13}%
+\contentsline {chapter}{\numberline {6}Regularization}{14}%
