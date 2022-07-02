@@ -179,83 +179,13 @@ Disadvantages:
 
 
 The main issue has to do with dimensionality. Every algorithm requires a dense data set, although K-NN requires to have at least one neighbor in each dimension, which makes for a very heavy computational load.
-
-\chapter{Linear Models}
-\section{Model assumptions}
-Assumptions (when correct) are a great tool to improve an algorithm. They can however lead to overfitting. For K-NN the only assumption that's made is the fact that proximity relates to label. 
-
-\begin{definition}[Bias]
-	The bias of a model is how strong its assumptions are.
-\end{definition}
-
-K-NN and Decision Trees are considered to be low bias. 
-
-\section{Linear models}
-A high-bias assumption is linear separability, which means that the classes can be simply divided by a line (or hyperplane in n dimensions).
-
-A line is defined by a pair of values: 
-
-\[
-0 = w_1f_1 + w_2f_2
-\]
-
-To classify we can input the values into the equation. If it's positive it will be above the line and viceversa.
-
-In n-dimensions: 
-
-\[
-0 = b+ \sum_{i=1}^{n} w_if_i
-\]
-
-\section{Online learning}
-
-This linear model is different because it sees one example at a time. This is useful when taking in data streams (for example from online resources).
-
-The algorithm receives an unlabeled example, it predicts and if it is not correct it updates its model.
-
-\section{Perceptron algorithm}
-This is a linear model that constantly updates when not correct.
-
-\includegraphics[scale=0.25]{perceptron}
-\chapter{Multiclass Classification}
-\begin{definition}[Binary classification]
-	Given an input $\mathscr{X}$, an unknown distribution $D$ over $\mathscr{X}\times \{-1,1\}$
-	a training set D compute a function f.
-\end{definition}
-
-\begin{definition}[Multiclass classification]
-	Given an input $\mathscr{X}$ and a number K of classes, an unknown distribution $D$ over $\mathscr{X}\times K$
-	a training set D compute a function f.
-\end{definition}
-
-None of the current methods work.
-
-The main idea is to modify the perceptron by adding multiple lines. There are two approaches to this.
-
-\section{One vs All (OVA)}
-
-For each label L define a binary problem. All examples with L are positive, the rest is negative.
-
-This poses a problem related to some areas in which it can either be two classes or none at all.
-
-\includegraphics[scale=0.1]{multiclass}
- How to classify? 
-
-Generally speaking the classifier should provide a level of confidence. To calculate this value we need to use decision boundaries and its distance from the hyperplane.
- 
-\section{All vs All (AVA)}
-The idea behind AVA is to pair up each permutation of 1v1 pairs. Then, the classifier will receives all examples of i as a +1 and -1 for the j class. When a test point arrives we evaluate on all the $F_{ij}$ classifiers. 
-
-\section{Summary}
-AVA has faster training time but a slower test time. AVA has more chances of error at test time.
-
-\textbf{Evaluation} comes when we need to evaluate a specific performance of an algorithm. Can be done through microaveraging, average over the examples, or macroaveraging, average of the average of each label.
-
-
-
+\include{./chapters/3}
+\include{./chapters/4}
 \include{./chapters/5}
 \include{./chapters/6}
 \include{./chapters/7}
 \include{./chapters/8}
 \include{./chapters/9}
+\include{./chapters/10}
+\include{./chapters/11}
 \end{document}

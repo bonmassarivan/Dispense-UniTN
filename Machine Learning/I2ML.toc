@@ -28,3 +28,9 @@
 \contentsline {chapter}{\numberline {9}Decision trees}{20}%
 \contentsline {section}{\numberline {9.1}Growing the tree}{20}%
 \contentsline {section}{\numberline {9.2}Overfitting}{21}%
+\contentsline {chapter}{\numberline {10}Introduction to Neural Networks}{22}%
+\contentsline {section}{\numberline {10.1}Feedforward networks: basic elements}{23}%
+\contentsline {section}{\numberline {10.2}Backpropagation}{23}%
+\contentsline {chapter}{\numberline {11}Optimization for Neural Networks and CNNs}{25}%
+\contentsline {section}{\numberline {11.1}Batch (Stochastic) Gradient Descent (BGD) and (SGD) }{25}%
+\contentsline {section}{\numberline {11.2}Convolutional Neural Networks (CNNs)}{26}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.10)  2 JUL 2022 14:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.10)  2 JUL 2022 16:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -129,8 +129,9 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count189
 \l__pdf_internal_box=\box47
 )
-(./I2ML.aux (./chapters/5.aux) (./chapters/6.aux) (./chapters/7.aux)
-(./chapters/8.aux) (./chapters/9.aux))
+(./I2ML.aux (./chapters/4.aux) (./chapters/5.aux) (./chapters/6.aux)
+(./chapters/7.aux) (./chapters/8.aux) (./chapters/9.aux) (./chapters/10.aux)
+(./chapters/11.aux))
 \openout1 = `I2ML.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
@@ -236,30 +237,39 @@ Overfull \hbox (19.29881pt too wide) in paragraph at lines 137--138
 [7
 
  <./images/voronoi.png>] [8]
+\openout2 = `./chapters/3.aux'.
+
+ (./chapters/3.tex
 Chapter 3.
 [9
+
 
 ]
 <./images/perceptron.png, id=58, 1565.85pt x 750.805pt>
 File: ./images/perceptron.png Graphic file (type png)
 <use ./images/perceptron.png>
-Package pdftex.def Info: ./images/perceptron.png  used on input line 219.
+Package pdftex.def Info: ./images/perceptron.png  used on input line 38.
 (pdftex.def)             Requested size: 391.46155pt x 187.70079pt.
-
-Overfull \hbox (61.46155pt too wide) in paragraph at lines 219--220
+)
+Overfull \hbox (61.46155pt too wide) in paragraph at lines 38--182
 [][] 
  []
 
 [10 <./images/perceptron.png>]
+\openout2 = `./chapters/4.aux'.
+
+ (./chapters/4.tex
 Chapter 4.
 <./images/multiclass.png, id=63, 2039.62pt x 835.12pt>
 File: ./images/multiclass.png Graphic file (type png)
 <use ./images/multiclass.png>
-Package pdftex.def Info: ./images/multiclass.png  used on input line 241.
+Package pdftex.def Info: ./images/multiclass.png  used on input line 23.
 (pdftex.def)             Requested size: 203.97395pt x 83.51689pt.
 [11
 
- <./images/multiclass.png>] [12]
+
+
+ <./images/multiclass.png>]) [12]
 \openout2 = `./chapters/5.aux'.
 
  (./chapters/5.tex
@@ -275,6 +285,7 @@ Overfull \hbox (37.76749pt too wide) in paragraph at lines 30--31
  []
 
 [13
+
 
 
 ]
@@ -382,37 +393,94 @@ Overfull \hbox (47.80481pt too wide) in paragraph at lines 31--32
 [][] 
  []
 
-) [21 <./images/split.png>] (./I2ML.aux (./chapters/5.aux) (./chapters/6.aux)
-(./chapters/7.aux) (./chapters/8.aux) (./chapters/9.aux)) ) 
+) [21 <./images/split.png>]
+\openout2 = `./chapters/10.aux'.
+
+ (./chapters/10.tex
+Chapter 10.
+<./images/xor.png, id=116, 451.6875pt x 447.6725pt>
+File: ./images/xor.png Graphic file (type png)
+<use ./images/xor.png>
+Package pdftex.def Info: ./images/xor.png  used on input line 9.
+(pdftex.def)             Requested size: 90.33589pt x 89.53291pt.
+[22
+
+
+
+ <./images/xor.png>]
+<./images/backpropagation.png, id=121, 792.9625pt x 576.1525pt>
+File: ./images/backpropagation.png Graphic file (type png)
+<use ./images/backpropagation.png>
+Package pdftex.def Info: ./images/backpropagation.png  used on input line 18.
+(pdftex.def)             Requested size: 158.58969pt x 115.22845pt.
+ [23 <./images/backpropagation.png>]) [24]
+\openout2 = `./chapters/11.aux'.
+
+
+(./chapters/11.tex
+Chapter 11.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--4
+
+ []
+
+
+Overfull \hbox (8.17961pt too wide) in paragraph at lines 9--9
+[]\OT1/cmr/bx/n/14.4 Batch (Stochas-tic) Gra-di-ent De-scent (BGD)
+ []
+
+<./images/bdg.png, id=130, 1086.0575pt x 686.565pt>
+File: ./images/bdg.png Graphic file (type png)
+<use ./images/bdg.png>
+Package pdftex.def Info: ./images/bdg.png  used on input line 17.
+(pdftex.def)             Requested size: 195.4819pt x 123.57635pt.
+[25
+
+
+
+ <./images/bdg.png>]
+<./images/pooling.png, id=135, 1168.365pt x 423.5825pt>
+File: ./images/pooling.png Graphic file (type png)
+<use ./images/pooling.png>
+Package pdftex.def Info: ./images/pooling.png  used on input line 40.
+(pdftex.def)             Requested size: 467.33772pt x 169.43pt.
+)
+Overfull \hbox (122.33772pt too wide) in paragraph at lines 38--190
+[] 
+ []
+
+[26 <./images/pooling.png>] (./I2ML.aux (./chapters/3.aux) (./chapters/4.aux)
+(./chapters/5.aux) (./chapters/6.aux) (./chapters/7.aux) (./chapters/8.aux)
+(./chapters/9.aux) (./chapters/10.aux) (./chapters/11.aux)) ) 
 Here is how much of TeX's memory you used:
- 2075 strings out of 481239
- 28574 string characters out of 5920377
- 266709 words of memory out of 5000000
- 17302 multiletter control sequences out of 15000+600000
+ 2144 strings out of 481239
+ 29705 string characters out of 5920377
+ 267575 words of memory out of 5000000
+ 17345 multiletter control sequences out of 15000+600000
  541268 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  30i,7n,26p,352b,185s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fo
-nts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rs
-fs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on I2ML.pdf (22 pages, 3928414 bytes).
+{/usr/share/texmf/
+fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs7.pf
+b></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on I2ML.pdf (27 pages, 4279498 bytes).
 PDF statistics:
- 172 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
+ 196 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 
