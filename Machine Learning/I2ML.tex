@@ -3,9 +3,12 @@
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
 \usepackage{amsthm}
+\usepackage{amsmath}
 \usepackage{mathrsfs}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
+
+
 
 \title{Dispensa Intro to Machine Learning}
 \author{Bonmassar Ivan}
@@ -248,74 +251,11 @@ AVA has faster training time but a slower test time. AVA has more chances of err
 
 \textbf{Evaluation} comes when we need to evaluate a specific performance of an algorithm. Can be done through microaveraging, average over the examples, or macroaveraging, average of the average of each label.
 
-\chapter{Gradient Descent}
-\section{Model based machine learning}
-There are 3 steps to this model:
-\begin{enumerate}
-	\item Pick a model (DT, perceptron)
-	\item Pick a criterion to optimize
-	\item Develop a learning algorithm
-\end{enumerate}
-
-In linear model: 
-\begin{enumerate}
-	\item 0 = b+ $\sum_{j=1}^{n} w_jf_j$
-	\item $\sum_{i=1}^{n}1[y_y(w\cdot x_i + b) \leq 0]$ (0/1 Loss function aka the total number of mistakes)
-	\item $argmin_{w,b}$ $\sum_{i=1}^{n}1[y_y(w\cdot x_i + b) \leq 0]$
-\end{enumerate}
-
-\section{Surrogate loss functions}
-Minimizing the 0/1 Loss function is an NP-hard problem, because of the many local minima and any change in w can change drastically the result. Ideally we would want a convex function so to have at least one minimum.
-
-By \textbf{surrogate loss function} we mean a loss function that provides an upper bound to the 0/1 loss function. 
-
-\begin{itemize}
-	\item 0/1 loss : $l(y,y') = 1[yy'\leq 0]$
-	\item Hinge loss: $l(y,y') = max(0,1-yy')$
-	\item Exponential loss: $l(y,y') = exp(yy')$
-	\item Squared loss: $l(y,y') = (y-y')^2$
-\end{itemize}
-
-\includegraphics[scale=0.2]{surrogate}
-
-\section{Gradient descent}
-We use gradient descent to find a minimum in the function. 
-
-The general approach is to choose a starting point $w$, calculate the derivative and move in that direction.
-
-\[
-w_j = w_j - \eta \frac{d}{dw_i}loss(w)
-\]
 
 
-
-$\eta$ is the rate at which we move and will change over time.
-
-Since it's changing over time it can be implemented through a perceptron algorithm.
-
-The main problem with gradient descent is local minima: 
-
-\includegraphics[scale=0.2]{local_minima}
-
-\chapter{Regularization}
-The problem with gradient descent remains the fact that since we're using it on the training set it can lead to overfitting. A solution to this is to use a regulalrizer.
-
-\begin{definition}[Regularizer]
-	An additional criterion to the loss function to avoid overfitting.
-\end{definition}
-
-More generally it regularizes the way we handle certain weights.
-
-Generally, we do not want huge weights: if weights are large, a small change in a feature can result in a large change in the prediction.
-
-Two common regularizers are: 
-
-\begin{itemize}
-	\item Sum of the weights: $\sum |w_j|$
-	\item Sum of the squared weights: $\sqrt{\sum |w_j|^2}$
-\end{itemize}
-
-Sum of weights penalizes small values whereas square sum penalizes large values. 
-
-P-norm: $\sqrt[p]{\sum |w_j|^p}$
+\include{./chapters/5}
+\include{./chapters/6}
+\include{./chapters/7}
+\include{./chapters/8}
+\include{./chapters/9}
 \end{document}

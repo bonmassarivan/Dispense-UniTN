@@ -1,0 +1,22 @@
+
+\chapter{Regularization}
+The problem with gradient descent remains the fact that since we're using it on the training set it can lead to overfitting. A solution to this is to use a regulalrizer.
+
+\begin{definition}[Regularizer]
+	An additional criterion to the loss function to avoid overfitting.
+\end{definition}
+
+More generally it regularizes the way we handle certain weights.
+
+Generally, we do not want huge weights: if weights are large, a small change in a feature can result in a large change in the prediction.
+
+Two common regularizers are: 
+
+\begin{itemize}
+	\item Sum of the weights: $\sum |w_j|$
+	\item Sum of the squared weights: $\sqrt{\sum |w_j|^2}$
+\end{itemize}
+
+Sum of weights penalizes small values whereas square sum penalizes large values. 
+
+P-norm: $\sqrt[p]{\sum |w_j|^p}$
