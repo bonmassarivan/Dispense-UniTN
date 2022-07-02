@@ -34,3 +34,5 @@
 \contentsline {chapter}{\numberline {11}Optimization for Neural Networks and CNNs}{25}%
 \contentsline {section}{\numberline {11.1}Batch (Stochastic) Gradient Descent (BGD) and (SGD) }{25}%
 \contentsline {section}{\numberline {11.2}Convolutional Neural Networks (CNNs)}{26}%
+\contentsline {chapter}{\numberline {12}Unsupervised Learning}{27}%
+\contentsline {section}{\numberline {12.1}Principal component analysis}{27}%
