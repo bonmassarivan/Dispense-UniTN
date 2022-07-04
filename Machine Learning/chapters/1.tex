@@ -1,0 +1,97 @@
+	
+\chapter{ML Basics}
+The main notion to get from this is the following. ML allows computers to gain \textbf{knowledge} acquired through \textbf{algorithms} by learning from data. This knowledge is represented through a \textbf{model} which is then used on future data.
+
+\includegraphics[scale=0.25]{data_model}
+
+The training data produces a model or predictor, whereas the testing data produce a prediction. 
+\section{Data}
+Data can be a list of movies from IMDB which is easily representable. Although we need to use \textbf{features} when taking into consideration other examples. Features is how an algorithm view data and is generally represented with vectors. 
+
+For example, classifying different apples, features could be the shape and colour of them.
+
+The general problem with data for classification for example is that not all data is the same. For instance a banana can either be green or yellow. Although this is true we cannot go to deep with this so we use a probabilistic model called \textbf{data generating distribution}. Both training and test data are based on this. 
+
+So in our previous example, we will generalize and say that bananas are yellow. 
+
+\begin{definition}[Probability distribution]
+	Describes how likely certain events are.
+\end{definition}
+
+High probability: round apples
+
+Low probability: square apples
+
+\section{Types of Learning}
+\textbf{SUPERVISED LEARNING}\\
+Supervised learning is when the algorithm is given labeled examples and the predictor should output a label. A further example of this is \textbf{classification}, where the model classifies from a pool of categories. 
+
+Given a training set $T = {(x_i, y_i)}$ learn a function that predicts $y$ given $x$. x is multi-dimensional.
+
+Some real world examples can be facial recognition, spam detection and character recognition. 
+
+\textbf{Regression} is similar to classification only with real values (i.e. numbers).
+
+\textbf{Ranking} the label is a ranking (most similar, most popular web pages etc.)
+
+
+\textbf{UNSUPERVISED LEARNING}
+The given data is without labels. 
+Some examples are: 
+
+\textbf{Clustering}, where the output is the general structure of the data set (clusters of data). Real world examples are image segmentation, social network analysis 
+
+\textbf{Anomaly detection}
+
+\textbf{Dimensionality reduction} 
+
+\textbf{REINFORCEMENT LEARNING}
+
+The idea is that the agent interacts with the environment and receives rewards based on behavior. 
+
+\section{ML Ingredients}
+
+\textbf{TASK}
+
+A task represents the type of prediction being made to solve a problem. 
+
+Assigning each input $ x \in \mathscr{X}$ to an output $y \in \mathscr{Y}$
+
+\textbf{Data}
+
+Data is basically the information required to solve a specific problem and as said previously is usually sampled from an unknown data generating distribution :
+
+$\textbf{p}_{data}$ 
+
+For classification and regression $\textbf{p}_{data} \in \triangle (\mathscr{X} \times \mathscr{Y})$
+
+\includegraphics[scale=0.25]{datasets}
+
+\textbf{Model and hypothesis space}
+
+A model is like a program that solves the problem. There are various models (decision trees, neural networks.. ) and a set of them makes up the hypothesis space. 
+
+\includegraphics[scale=0.24]{hypothesis_space}
+
+\textbf{The objective}
+
+The objective is to minimize an error function $E(f,\textbf{p}_{data})$ to find the optimal function 
+
+$f^{\star} =$ arg min $E(f,\textbf{p}_{data}) $.
+
+This however is really hard to do because of the too large search space. 
+
+The \emph{feasible target} is the optimal one in a restricted hypothesis space $\mathscr{H}$
+
+$f^{\star}_{\mathscr{H}} =$ arg min $E(f,\textbf{p}_{data}) $.
+
+This is also not doable because we do not have access to $\textbf{p}_{data}$
+\\
+The \emph{actual target} is then the following: 
+\\
+
+$f^{\star}_{\mathscr{H}} (\mathscr{D}_n) =$ arg min $E(f, \mathscr{D}_n) $. where $\mathscr{D}_n$ is a training set. 
+
+The error function is usually specified as a pointwise-loss $\mathscr{l}(f,z)$ measuring the error of f on the training set z. 
+
+The learning algorithm solves the optimization problem which targets the actual target. 

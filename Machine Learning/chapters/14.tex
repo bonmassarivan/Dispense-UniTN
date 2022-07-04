@@ -1,0 +1,25 @@
+\chapter{Reinforcement Learning}
+The idea is similar to behavioral psychology. It's good for problems where an agent is interacting with the environment. \\
+The agent can take actions that affect the environment based on rewards, states and policies. Policies are a set of actions taken to change the state of the environment. An easy example is atari games ML. 
+\section{Markov Decision Process}
+MDP is defined by the follwing:
+\begin{itemize}
+	\item $S$ set of possible states
+	\item $A$ set of actions
+	\item $R$ distribution of reward, given (state,action ) pair
+	\item $P$ transition probability 
+	\item discount value $\gamma$
+\end{itemize}
+
+It uses dynamic programming (Bellman algorithm) to divide the problem in multiple sub problems. $\gamma$ is used to calculate the rewards in the next states.
+Example: grid world
+\\
+There are two main methods for RL: value based methods and policy based methods.
+
+\section{Value based methods}
+The value function is a function that calculates the value of the reward for a particular state. With this function we can find a policy by finding the max. \\
+Another approach is the Q-function which takes as input a pair of states and actions. This is also called Q-Learning and it uses a reward table to explain the actions taken and the respective reward. \\
+At the start the agent has a Q matrix that through learning becomes the reward table R.
+\section{Policy gradient methods}
+The problem with Q-functions is that for bery large datasets in can be problematic to calculate the reward table. It can be better to use a policy gradient, since it allows the agent to interact with the environment and it will learn over time to make the better moves.\\
+Formally, it finds the best parameters to get the biggest reward.

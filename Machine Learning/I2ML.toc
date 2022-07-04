@@ -36,3 +36,10 @@
 \contentsline {section}{\numberline {11.2}Convolutional Neural Networks (CNNs)}{26}%
 \contentsline {chapter}{\numberline {12}Unsupervised Learning}{27}%
 \contentsline {section}{\numberline {12.1}Principal component analysis}{27}%
+\contentsline {section}{\numberline {12.2}Clustering}{28}%
+\contentsline {chapter}{\numberline {13}Deep Generative Models}{30}%
+\contentsline {section}{\numberline {13.1}Variational Autoencoders (VAE)}{30}%
+\contentsline {section}{\numberline {13.2}Generative Adversarial Networks (GAN)}{31}%
+\contentsline {chapter}{\numberline {14}Reinforcement Learning}{32}%
+\contentsline {section}{\numberline {14.1}Markov Decision Process}{32}%
+\contentsline {section}{\numberline {14.2}Value based methods}{32}%
